@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tip Calculator</title>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script type="text/javascript">
+		function outstanding(){
+			let i = document.getElementById("txt1").value;
+			let j = document.getElementById("txt2").value;
+			let k , l , m ;
+			if (i > 0 && j > 0) {
+				k = i / j * .1 ;
+				l = i / j + k ;
+				m = l * j ;
+			}
+			else{
+				alert("Enter Valid Amount");
+			}
+			document.getElementById("tip").innerHTML = Math.round(k);
+			document.getElementById("total").innerHTML = Math.round(l);
+			document.getElementById("amount").innerHTML = Math.round(m);
+		}
+		function good(){
+			let i = document.getElementById("txt1").value;
+			let j = document.getElementById("txt2").value;
+			let k , l , m ;
+			if (i > 0 && j > 0) {
+				k = i / j * .08 ;
+				l = i / j + k ;
+				m = l * j ;
+			}
+			else{
+				alert("Enter Valid Amount");
+			}
+			document.getElementById("tip").innerHTML = Math.round(k);
+			document.getElementById("total").innerHTML = Math.round(l);
+			document.getElementById("amount").innerHTML = Math.round(m);
+		}
+		function itsOk(){
+			let i = document.getElementById("txt1").value;
+			let j = document.getElementById("txt2").value;
+			let k , l , m ;
+			if (i > 0 && j > 0) {
+				k = i / j * .06 ;
+				l = i / j + k ;
+				m = l * j ;
+			}
+			else{
+				alert("Enter Valid Amount");
+			}
+			document.getElementById("tip").innerHTML = Math.round(k);
+			document.getElementById("total").innerHTML = Math.round(l);
+			document.getElementById("amount").innerHTML = Math.round(m);
+		}
+		function notbad(){
+			let i = document.getElementById("txt1").value;
+			let j = document.getElementById("txt2").value;
+			let k , l , m ;
+			if (i > 0 && j > 0) {
+				k = i / j * .04 ;
+				l = i / j + k ;
+				m = l * j ;
+			}
+			else{
+				alert("Enter Valid Amount");
+			}
+			document.getElementById("tip").innerHTML = Math.round(k);
+			document.getElementById("total").innerHTML = Math.round(l);
+			document.getElementById("amount").innerHTML = Math.round(m);
+		}
+		function terrible(){
+			let i = document.getElementById("txt1").value;
+			let j = document.getElementById("txt2").value;
+			let k , l , m ;
+			if (i > 0 && j > 0) {
+				k = i / j * .02 ;
+				l = i / j + k ;
+				m = l * j ;
+			}
+			else{
+				alert("Enter Valid Amount");
+			}
+			document.getElementById("tip").innerHTML = Math.round(k);
+			document.getElementById("total").innerHTML = Math.round(l);
+			document.getElementById("amount").innerHTML = Math.round(m);
+		}
+		function self(){
+			let i = document.getElementById("txt1").value;
+			let j = document.getElementById("txt2").value;
+			let k , l , m ;
+			if (i > 0 && j > 0) {
+				k = 0 ;
+				l = i / j ;
+				m = l * j ;
+			}
+			else{
+				alert("Enter Valid Amount");
+			}
+			document.getElementById("tip").innerHTML = Math.round(k);
+			document.getElementById("total").innerHTML = Math.round(l);
+			document.getElementById("amount").innerHTML = Math.round(m);
+		}
+	</script>
+	<style type="text/css">
+		.font
+		{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body class="container pt-4">
+	<h3 class="text-center pt-4">
+		TIP & TOTAL Calculator
+	</h3>
+	<div class="row pt-4 font">
+		<div class="col-md-6">
+			<label>Bill Amount</label>
+		</div>
+		<div class="col-md-6">
+			<input type="text" id="txt1" placeholder="Enter Amount">
+		</div>
+	</div>
+	<div class="row pt-4 font">
+		<div class="col-md-6">
+			<label>No. of Members Sharing The Bill Amount</label>
+		</div>
+		<div class="col-md-6">
+			<input type="text" id="txt2" placeholder="Enter No of Members">
+		</div>
+	</div>
+	<div class="row pt-4 font">
+		<div class="col-md-4">
+			<label>Rate Our Service</label>
+		</div>		
+		<div class="col-md-8">
+		<!--<marquee>
+				Out Standing - 10% ,. Good - 8% ,. It's ok - 6% ,. Not Bad - 4% ,. Terrible - 2%. 
+			</marquee>-->
+			<button  class="btn btn-primary"  onclick="outstanding()">Out Standing</button>
+			<button  class="btn btn-primary"  onclick="good()">Good</button>
+			<button  class="btn btn-primary"  onclick="itsOk()">Its's Ok</button>
+			<button  class="btn btn-primary"  onclick="notbad()">Not Bad</button>
+			<button  class="btn btn-primary"  onclick="terrible()">Terrible</button>
+			<button  class="btn btn-secondary"  onclick="self()">Self-Service</button>
+		</div>
+	</div>	
+	<div class="row pt-4 font">
+		<div class="col-md-6">
+			Tip Amount Per Head
+		</div>
+		<div class="col-md-6">
+			<div id="tip"></div>	
+		</div>
+	</div> 
+	<div class="row pt-4 font">
+		<div class="col-md-6">
+			Total Amount Per Head
+		</div>
+		<div class="col-md-6">
+			<div id="total"></div>	
+		</div>
+	</div> 		
+	<div class="row pt-4 font">
+		<div class="col-md-6">
+			Total Amount 
+		</div>
+		<div class="col-md-6">
+			<div id="amount"></div>	
+		</div>
+	</div> 		
+	<!-- JS, Popper.js, and jQuery -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

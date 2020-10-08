@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Calculator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  	<style type="text/css">
+  		.result
+  		{
+  			width: 100%;
+  			height: 75px;
+  		}
+  		.btn
+  		{
+  			width: 100%;
+  		} 
+  		.result
+  		{
+  			text-align: right;
+  		}		
+  	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<form name="form_1">
+					<table class="table table-bordered" >
+						<tbody>
+							<tr>
+								<td colspan="4">
+									<input type="textview" name="textview" class="result">
+								</td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert('%')" value="%"/></td>
+								<td><input type="button" class="btn btn-light" onclick="clean()" value="CE"/></td>
+								<td><input type="button" class="btn btn-light" onclick="clean()" value="C"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('')" value="<"/></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert()" value="1/x"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert()" value="x2"/></td>
+								<td><input type="button" class="btn" onclick="insert()" value="@"></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(/)" value="/"/></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert(7)" value="7"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(8)" value="8"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(9)" value="9"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('*')" value="x"/></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert(4)" value="4"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(5)" value="5"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(6)" value="6"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('-')" value="-"/></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert(1)" value="1"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(2)" value="2"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(3)" value="3"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('+')" value="+"/></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert('00')" value="00"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(0)" value="0"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('.')" value="."/></td>
+								<td><input type="button" class="btn btn-primary" onclick="equal()" value="="/></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<div class="col-md-4">
+				
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+  		function insert(num)
+  		{
+  			document.form_1.textview.value=document.form_1.textview.value+num
+  		}
+  		function equal()
+  		{
+  			let equation=document.form_1.textview.value;
+  			if(equation)
+  			{
+  				document.form_1.textview.value=eval(equation)
+  			}
+  		}
+  		function clean()
+  		{
+  			document.form_1.textview.value=""
+  		}
+  	</script>
+</body>
+</html>

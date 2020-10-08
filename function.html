@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Functions</title>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<script type="text/javascript">
+	function sum(){
+		let x = Number(document.getElementById("no1").value);
+		let y = Number(document.getElementById("no2").value);
+		let z =  x  +  y ;
+		document.getElementById("sum").innerHTML = z;
+	}
+	function sec(){
+		let s = document.getElementById("min").value; 
+		let t = s * 60 ;
+		document.getElementById("sec").innerHTML = t;
+	}
+	function add1(){
+		let a = Number(document.getElementById("num").value); 
+		let a1 = a + 1 ;
+		document.getElementById("add").innerHTML = a1;
+	}
+	function area(){
+		let b = document.getElementById("base").value;
+		let h = document.getElementById("height").value;
+		let area = 0.5 * b * h;
+		document.getElementById("area").innerHTML = area;
+	}
+	function string(){
+		let fst = document.getElementById("1ststring").value;
+		let sec = document.getElementById("2ndstring").value;
+		let string = fst + " " + sec;
+		document.getElementById("display").innerHTML = string;
+	}
+	function hrs(){
+		let u = document.getElementById("hrs").value; 
+		let o = ( u * 60) * 60 ;
+		document.getElementById("hrssec").innerHTML = o;
+	}
+	function side(){
+		let side0 = Number(document.getElementById("side1").value);
+		let side1 = Number(document.getElementById("side2").value);
+		let side2 = (side0 + side1) - 1;
+		document.getElementById("third").innerHTML = side2;
+	}
+	function remainder(){
+		let e = document.getElementById("fst").value;
+		let f = document.getElementById("snd").value;
+		let g = e % f;
+		document.getElementById("rem").innerHTML = g;
+	}
+	function rectarea(){
+		let l = Number(document.getElementById("len").value);
+		let h = Number(document.getElementById("ht").value);
+		let area = 2 * (l + h);
+		document.getElementById("rarea").innerHTML = area;
+	}/*
+	function TrF(argument) {
+		// body...
+		let n = document.getElementById("num").value;
+		n < = 0
+	}*/
+</script>
+<body class="container">
+	<!--Sum Of Two Numbers-->
+	<h4>Sum Of Two Numbers</h4>
+	<div class="row">
+		<div class="col-md-4">
+			<label>Enter Number</label>
+			<input type="Number" id="no1" placeholder="First Number">
+		</div>
+		<div class="col-md-4">
+			<label>Enter Number</label>
+			<input type="Number" id="no2" placeholder="Second Number">
+		</div>
+		<div class="col-md-2">
+			<button  class="btn btn-primary"  onclick="sum()">Sum</button>
+		</div>
+		<div class="col-md-2" id="sum"></div>
+	</div>	
+	<!-- Convertion of Minutes to Seconds-->
+	<h4>Minutes To Seconds</h4>
+	<div class="row">
+		<div class="col-md-8">
+			<label>Enter Minutes</label>
+			<input type="Number" id="min" placeholder="Minutes">
+		</div>
+		<div class="col-md-2">
+			<button  class="btn btn-primary"  onclick="sec()">Sec</button>
+		</div>
+		<div class="col-md-2" id="sec"></div>
+	</div>	
+	<!--Add one Number Plus !-->
+	<h4>Add One</h4>
+	<div class="row">
+		<div class="col-md-8">
+			<label>Enter Number</label>
+			<input type="Number" id="num" placeholder="Number">
+		</div>
+		<div class="col-md-2">
+			<button  class="btn btn-primary"  onclick="add1()">Add</button>
+		</div>
+		<div class="col-md-2" id="add"></div>
+	</div>	
+	<!--Area of Triangle-->
+	<h4>Area of Triangle</h4>
+	<div class="row">
+		<div class="col-md-4">
+			<label>Enter Base</label>
+			<input type="Number" id="base" placeholder="Base">
+		</div>
+		<div class="col-md-4">
+			<label>Enter Height</label>
+			<input type="Number" id="height" placeholder="Height">
+		</div>
+		<div class="col-md-2">
+			<button  class="btn btn-primary"  onclick="area()">Area</button>
+		</div>
+		<div class="col-md-2" id="area"></div>
+	</div>	
+	<!--Write a function that returns the string "something" joined with a space " " and the given argument a-->
+	<h4>Returns the string</h4>
+	<div class="row">
+		<div class="col-md-4">
+			<label>Enter First String</label>
+			<input type="text" id="1ststring" placeholder="First String">
+		</div>
+		<div class="col-md-4">
+			<label>Enter Second String</label>
+			<input type="text" id="2ndstring" placeholder="second String">
+		</div>
+		<div class="col-md-2">
+			<button class="btn btn-primary" onclick="string()">Add String</button>
+		</div>
+		<div class="col-md-2" id="display"></div>
+	</div>
+	<!--hours into seconds-->
+	<h4>Hours To Seconds</h4>
+	<div class="row">
+		<div class="col-md-8">
+			<label>Enter Hours</label>
+			<input type="Number" id="hrs" placeholder="Hours">
+		</div>
+		<div class="col-md-2">
+			<button  class="btn btn-primary"  onclick="hrs()">Hours</button>
+		</div>
+		<div class="col-md-2" id="hrssec"></div>
+	</div>	
+	<!--finds the maximum range of a triangle's third edge-->
+	<h4>Maximum range of a triangle's third edge</h4>
+	<div class="row">
+		<div class="col-md-4">
+			<label>First Side</label>
+			<input type="Number" id="side1" placeholder="First Side">
+		</div>
+		<div class="col-md-4">
+			<label>Second Side</label>
+			<input type="Number" id="side2" placeholder="Second Side">
+		</div>
+		<div class="col-md-2">
+			<button  class="btn btn-primary"  onclick="side()">Third Edge</button>
+		</div>
+		<div class="col-md-2" id="third"></div>
+	</div>	
+	<!--Return the Remainder from Two Numbers.-->
+	<h4>Return the Remainder from Two Numbers. </h4>
+	<div class="row">
+		<div class=" col-md-4">
+			<label>Enter Number</label>
+			<input type="Number" id="fst" placeholder="First Number">
+		</div>
+		<div class=" col-md-4">
+			<label>Enter Number</label>
+			<input type="Number" id="snd" placeholder="Second Number">
+		</div>
+		<div class=" col-md-2">
+			<button  class="btn btn-primary"  onclick="remainder()">Remainder</button>
+		</div>
+		<div class="col-md-2" id="rem"></div>
+	</div>	
+	<!--Perimeter of Rectangle-->
+	<h4>Perimeter of Rectangle</h4>
+	<label>Enter Length</label>
+	<input type="Number" id="len" placeholder="Base">
+	<label>Enter Height</label>
+	<input type="Number" id="ht" placeholder="Height">
+	<button  class="btn btn-primary"  onclick="rectarea()">Rect Area</button>
+	<div id="rarea"></div>
+	<!--Create a function that takes a number as its only argument and returns true if it's less than or equal to zero, otherwise return false.
+	<h4>Returns true if it's less than or equal to zero</h4>
+	<div class="row">
+		<div class="col-md-8">
+			<label>Enter Number</label>
+			<input type="Number" id="num" placeholder="Enter number">
+		</div>
+		<div class=" col-md-2">
+			<button  class="btn btn-primary"  onclick="TrF()">T or F</button>
+		</div>
+		<div class="col-md-2" id="say"></div>
+	</div>-->
+
+	<!-- JS, Popper.js, and jQuery -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
